@@ -1,0 +1,8 @@
+<hello name="{{ name }}"></hello>
+  <input type="checkbox" (change)="onCheckParent($event)"> Select All
+  <div *ngFor="let item of array">
+    <input type="checkbox" [(ngModel)]="item.status" (change)="parentChecked($event , item.id)">{{item.name}}
+    <div *ngFor="let child of item.childParent">
+     &nbsp; <input type="checkbox" [(ngModel)]="child.status" (change)="childChecked($event , item.id, child.id)"> {{child.name1}}
+    </div>
+  </div>
